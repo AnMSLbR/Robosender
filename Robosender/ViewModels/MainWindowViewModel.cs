@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace Robosender.ViewModels
 {
@@ -11,8 +12,8 @@ namespace Robosender.ViewModels
     {
         public AccountsViewModel AccountsVM { get; set; }
         public MainViewModel MainVM { get; set; }
-        public RelayCommand AccountsViewCommand { get; set; }
-        public RelayCommand MainViewCommand { get; set; }
+        public ICommand AccountsViewCommand { get; set; }
+        public ICommand MainViewCommand { get; set; }
 
         private object _currentView;
         public object CurrentView

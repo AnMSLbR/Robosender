@@ -10,15 +10,21 @@ using System.Windows;
 
 namespace Robosender
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
     public partial class App : Application
     {
-        protected override void OnStartup(StartupEventArgs e)
+        protected void ApplicationStart(object sender, StartupEventArgs e)
         {
-            base.OnStartup(e);
-            new MainWindow() { DataContext = new MainWindowViewModel() }.Show();
+            var authorizationWindow = new AuthorizationWindow() { DataContext = new AuthorizationWindowViewModel() };
+            authorizationWindow.Show();
+            authorizationWindow.IsVisibleChanged += (s, ev) =>
+            {
+                if (authorizationWindow.IsVisible == false && authorizationWindow.IsLoaded)
+                {
+                    var mainWindow = new MainWindow() { DataContext = new MainWindowViewModel() };
+                    mainWindow.Show();
+                    authorizationWindow.Close();
+                }
+            };
         }
     }
 }

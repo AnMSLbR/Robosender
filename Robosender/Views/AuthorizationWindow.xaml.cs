@@ -17,9 +17,9 @@ namespace Robosender.Views
     /// <summary>
     /// Логика взаимодействия для ActivationWindow.xaml
     /// </summary>
-    public partial class ActivationWindow : Window
+    public partial class AuthorizationWindow : Window
     {
-        public ActivationWindow()
+        public AuthorizationWindow()
         {
             InitializeComponent();
         }

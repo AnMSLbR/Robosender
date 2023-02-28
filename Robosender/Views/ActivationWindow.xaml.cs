@@ -1,5 +1,4 @@
-﻿using Robosender.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Robosender
+namespace Robosender.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Логика взаимодействия для ActivationWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ActivationWindow : Window
     {
-        public MainWindow()
+        public ActivationWindow()
         {
             InitializeComponent();
         }

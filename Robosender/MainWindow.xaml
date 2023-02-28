@@ -3,10 +3,30 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Robosender"
+        xmlns:local="clr-namespace:Robosender" 
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Robosender" MinHeight="450" MinWidth="800"
+        Height="450" Width="800" Background="#f1f4f6">
     <Grid>
 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="55*"/>
+            <RowDefinition Height="379*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Background="#0d2443">
+            <RadioButton Content="Главная" HorizontalAlignment="Left" FontSize="16" VerticalAlignment="Center" 
+                         Foreground="White" Style="{StaticResource MenuButtonTheme}"
+                         Command="{Binding MainViewCommand}"/>
+            <RadioButton Content="Аккаунты" HorizontalAlignment="Left" FontSize="16" VerticalAlignment="Center" 
+                         Foreground="White" Style="{StaticResource MenuButtonTheme}" IsChecked="True"
+                         Command="{Binding AccountsViewCommand}"/>
+            <RadioButton Content="Обновления" HorizontalAlignment="Left" FontSize="16" VerticalAlignment="Center" 
+                         Foreground="White" Style="{StaticResource MenuButtonTheme}"/>
+            <RadioButton Content="Настройки" HorizontalAlignment="Left" FontSize="16" VerticalAlignment="Center" 
+                         Foreground="White" Style="{StaticResource MenuButtonTheme}"/>
+        </StackPanel>
+        
+        <ContentControl Grid.Row="1" Grid.Column="0"
+                        Content="{Binding CurrentView}"/>
     </Grid>
 </Window>
